@@ -1,5 +1,5 @@
 <% @tasks.each do |task| %>
-  <h2><%= task.title %></h2>
+  <h2><%= link_to task.title, task %></h2>
   <p><%= task.company %></p>
 <% end %>
 
