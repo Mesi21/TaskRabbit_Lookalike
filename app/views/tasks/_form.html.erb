@@ -1,4 +1,5 @@
 <%= simple_form_for(@task, html: {class: 'form-horizontal'}) do |f| %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category!" } %>
     <%= f.input :title, label: "task title" %>
     <%= f.input :description, label: "task description" %>
     <%= f.input :company, label: "your company" %>
