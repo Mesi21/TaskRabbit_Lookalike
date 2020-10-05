@@ -1,26 +1,40 @@
-## Soon to be updated ...
+<img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 
-# README
+# TaskRabbit Lookalike
+A project to create, update and delete tasks, sort them by their categories 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Screenshot
 
-Things you may want to cover:
+![screenshot](app/assets/images/main.png)
+![screenshot](app/assets/images/sec.png)
 
-* Ruby version
+## Contribution guide
 
-* System dependencies
+1. Clone the project
+```bash
+  git clone https://github.com/Mesi21/TaskRabbit_Lookalike
+  cd TaskRabbit_Lookalike
+  install the gems by running: `$ bundle install`
+  update the bundle: `$ bundle update`
+  start the server `rails s`
+  open browser: `localhost:3000`
+```
 
-* Configuration
+2. Then :heavy_plus_sign: add your contribution
+3. And Feel free to make a PR
 
-* Database creation
+## Tehnical tools:
 
-* Database initialization
+- Rails
+- Ruby
 
-* How to run the test suite
+### Gems
 
-* Services (job queues, cache servers, search engines, etc.)
+- simpe_form
+- bootstrap-sass
 
-* Deployment instructions
+## Contributors
 
-* ...
+- Emese Molnar [@Mesi21](https://github.com/Mesi21)
+
+### If you like this project don't forget to support it by giving a :star: 
