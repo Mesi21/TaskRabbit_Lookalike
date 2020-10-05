@@ -1,52 +1,50 @@
+# frozen_string_literal: true
+
 class TasksController < ApplicationController
-    before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :find_task, only: %i[show edit update destroy]
 
+  def index
+    @tasks = Task.all.order('created_at DESC')
+  end
 
-    def index
-        @tasks = Task.all.order("created_at DESC")
+  def show; end
+
+  def new
+    @task = Task.new
+  end
+
+  def create
+    @task = Task.new(task_params)
+
+    if @task.save
+      redirect_to @task
+    else
+      render 'New'
     end
+  end
 
-    def show
+  def edit; end
+
+  def update
+    if @task.update(task_params)
+      redirect_to @task
+    else
+      render 'Edit'
     end
+  end
 
-    def new
-        @task = Task.new
-    end
+  def destroy
+    @task.destroy
+    redirect_to root_path
+  end
 
-    def create
-        @task = Task.new(task_params)
+  private
 
-        if @task.save
-            redirect_to @task
-        else
-            render 'New'
-        end
-    end
+  def task_params
+    params.require(:task).permit(:title, :description, :company, :url)
+  end
 
-    def edit
-    end
-
-    def update
-        if @task.update(task_params)
-            redirect_to @task
-        else
-            render 'Edit'
-        end
-    end
-    
-    def destroy
-        @task.destroy
-        redirect_to root_path
-    end
-
-    private
-
-    def task_params
-        params.require(:task).permit(:title, :description, :company, :url)
-    end
-
-    def find_task
-        @task = Task.find(params[:id])
-    end
-
+  def find_task
+    @task = Task.find(params[:id])
+  end
 end
